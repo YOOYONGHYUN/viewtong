@@ -70,15 +70,15 @@ yarn orval
 
 ## 실행 방법 (Yarn 기준)
 
-1. 패키지 설치  
+1. 패키지 설치
    ```
    yarn install
    ```
-2. 개발 서버 실행  
+2. 개발 서버 실행
    ```
    yarn start
    ```
-3. (API 스펙 변경 시) orval로 타입/쿼리 자동 생성  
+3. (API 스펙 변경 시) orval로 타입/쿼리 자동 생성
    ```
    yarn orval
    ```
