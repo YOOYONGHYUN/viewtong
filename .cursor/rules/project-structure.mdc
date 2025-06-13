@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 프로젝트 구조 및 개발 가이드
+
+- 메인 홈 화면 컴포넌트는 [src/components/home/HomeMain.tsx](mdc:src/components/home/HomeMain.tsx)에 위치합니다.
+- 글로벌 스타일 및 폰트 설정은 [src/index.css](mdc:src/index.css)에서 관리합니다.
+- 헤더 등 주요 레이아웃 컴포넌트는 [src/components/layout/Header.tsx](mdc:src/components/layout/Header.tsx)에 있습니다.
+- 아이콘, 버튼 등 UI 컴포넌트는 `src/components/ui/` 및 `src/components/Icons/`에 위치할 수 있습니다.
+- 퍼블릭 정적 파일(이미지, 비디오 등)은 `public/` 폴더 하위에 위치하며, 예시: `public/videos/pattern.mp4`
+- 비디오, 이미지 등 미디어 파일은 `process.env.PUBLIC_URL`을 통해 public 폴더에서 불러올 수 있습니다.
+- Tailwind CSS의 커스텀 스타일(예: 임의 색상, 자간, 줄간격 등)은 대괄호 문법(`text-[rgb(76,106,255)]`, `w-[800px]` 등)으로 사용할 수 있습니다.
+- 반응형 스타일은 Tailwind의 접두사(`md:`, `lg:` 등)를 사용합니다.
+- letter-spacing(자간)은 `tracking-*`, line-height(줄간격)은 `leading-*` 클래스로 지정합니다.
+- 임의의 색상, 크기 등은 Tailwind의 대괄호 문법으로 지정할 수 있습니다. 예: `text-[rgb(76,106,255)]`, `w-[800px]`

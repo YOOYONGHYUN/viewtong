@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0.75rem;
+}
+
+.outer-glow {
+  position: relative;
+}
+
+.outer-glow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background: #c6cef8;
+  border-radius: 9999px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.ql-toolbar {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.ql-container {
+  min-height: 300px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
