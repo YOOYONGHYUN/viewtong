@@ -64,6 +64,7 @@ const isPublicRoute = (pathname: string) => notRequireAuth.includes(pathname);
 
 const RequireAuth = () => {
   const token = getToken();
+  const [refresh, setRefresh] = useState(false);
   const { fetchUser } = useUserStore();
   const { fetchProductCategory, fetchProductTag } = useCategoryStore();
   const { fetchProductListAll } = useProductStore();
@@ -79,8 +80,11 @@ const RequireAuth = () => {
       await fetchProductTag();
       await fetchProductListAll();
       await fetchMyCompany();
+      setRefresh(true);
     };
+
     fetchData();
+
     // eslint-disable-next-line
   }, [token]);
 
@@ -89,7 +93,7 @@ const RequireAuth = () => {
     return <Navigate to="/signin" replace />;
   }
 
-  return <Outlet />;
+  return refresh ? <Outlet /> : <></>;
 };
 
 const App = () => {
