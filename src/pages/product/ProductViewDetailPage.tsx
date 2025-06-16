@@ -45,9 +45,20 @@ const ProductViewDetailPage = () => {
         setProduct(product.data);
         setThumbnailImage(
           user?.mbrSeCd === "01"
-            ? `${cloudFrontUrl}${product.data.thumbImgPathVl}`
+            ? `${product.data.thumbImgPathVl}`
             : `${cloudFrontUrl2}${product.data.thumbImgPathVl}`
         );
+
+        console.log(product.data.thumbImgPathVl);
+        console.log(user?.mbrSeCd);
+
+        console.log(
+          user?.mbrSeCd === "01"
+            ? `${product.data.thumbImgPathVl}`
+            : `${cloudFrontUrl2}${product.data.thumbImgPathVl}`
+        );
+
+        console.log(product.data);
         setRender(true);
       }
     } catch (error) {
@@ -57,9 +68,7 @@ const ProductViewDetailPage = () => {
 
   const handleThumbnailImage = (path: string) => {
     setThumbnailImage(
-      user?.mbrSeCd === "01"
-        ? `${cloudFrontUrl}${path}`
-        : `${cloudFrontUrl2}${path}`
+      user?.mbrSeCd === "01" ? `${path}` : `${cloudFrontUrl2}${path}`
     );
   };
 
@@ -138,7 +147,7 @@ const ProductViewDetailPage = () => {
                     <img
                       src={`${
                         user?.mbrSeCd === "01"
-                          ? `${cloudFrontUrl}${product?.thumbImgPathVl}`
+                          ? `${product?.thumbImgPathVl}`
                           : `${cloudFrontUrl2}${product?.thumbImgPathVl}`
                       }`}
                       alt={"thumbnailImg1"}
@@ -156,7 +165,7 @@ const ProductViewDetailPage = () => {
                     <img
                       src={`${
                         user?.mbrSeCd === "01"
-                          ? `${cloudFrontUrl}${product?.thumbImgPath2Vl}`
+                          ? `${product?.thumbImgPath2Vl}`
                           : `${cloudFrontUrl2}${product?.thumbImgPath2Vl}`
                       }`}
                       alt={"thumbnailImg2"}
@@ -174,7 +183,7 @@ const ProductViewDetailPage = () => {
                     <img
                       src={`${
                         user?.mbrSeCd === "01"
-                          ? `${cloudFrontUrl}${product?.addImgPath1Vl}`
+                          ? `${product?.addImgPath1Vl}`
                           : `${cloudFrontUrl2}${product?.addImgPath1Vl}`
                       }`}
                       alt={"additionalImg1"}
@@ -192,7 +201,7 @@ const ProductViewDetailPage = () => {
                     <img
                       src={`${
                         user?.mbrSeCd === "01"
-                          ? `${cloudFrontUrl}${product?.addImgPath2Vl}`
+                          ? `${product?.addImgPath2Vl}`
                           : `${cloudFrontUrl2}${product?.addImgPath2Vl}`
                       }`}
                       alt={"additionalImg2"}
@@ -481,7 +490,7 @@ const ProductViewDetailPage = () => {
                     <a
                       href={
                         user?.mbrSeCd === "01"
-                          ? `${cloudFrontUrl}${product?.rcmdtnCustNm}`
+                          ? `${product?.rcmdtnCustNm}`
                           : `${cloudFrontUrl2}${product?.rcmdtnCustNm}`
                       }
                       download
@@ -507,7 +516,7 @@ const ProductViewDetailPage = () => {
                     <a
                       href={
                         user?.mbrSeCd === "01"
-                          ? `${cloudFrontUrl}${product?.explnAtchFilePathVl}`
+                          ? `${product?.explnAtchFilePathVl}`
                           : `${cloudFrontUrl2}${product?.explnAtchFilePathVl}`
                       }
                       download

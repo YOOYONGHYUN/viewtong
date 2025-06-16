@@ -39,7 +39,7 @@ const MDProductViewDetailPage = () => {
       const product = await productsControllerFindOne(Number(id));
       if (product.data) {
         setProduct(product.data);
-        setThumbnailImage(`${cloudFrontUrl}${product.data.thumbImgPathVl}`);
+        setThumbnailImage(`${product.data.thumbImgPathVl}`);
         setRender(true);
       }
     } catch (error) {
@@ -48,7 +48,7 @@ const MDProductViewDetailPage = () => {
   };
 
   const handleThumbnailImage = (path: string) => {
-    setThumbnailImage(`${cloudFrontUrl}${path}`);
+    setThumbnailImage(`${path}`);
   };
 
   const getTagList = (tagCd: string | null | undefined) => {
@@ -117,7 +117,7 @@ const MDProductViewDetailPage = () => {
                     }
                   >
                     <img
-                      src={`${cloudFrontUrl}${product?.thumbImgPathVl}`}
+                      src={`${product?.thumbImgPathVl}`}
                       alt={product?.prdctNm}
                       className="w-[100px] h-[100px] object-contain"
                     />
@@ -131,7 +131,7 @@ const MDProductViewDetailPage = () => {
                     }
                   >
                     <img
-                      src={`${cloudFrontUrl}${product?.thumbImgPath2Vl}`}
+                      src={`${product?.thumbImgPath2Vl}`}
                       alt={product?.prdctNm}
                       className="w-[100px] h-[100px] object-contain"
                     />
@@ -145,7 +145,7 @@ const MDProductViewDetailPage = () => {
                     }
                   >
                     <img
-                      src={`${cloudFrontUrl}${product?.addImgPath1Vl}`}
+                      src={`${product?.addImgPath1Vl}`}
                       alt={product?.prdctNm}
                       className="w-[100px] h-[100px] object-contain"
                     />
@@ -159,7 +159,7 @@ const MDProductViewDetailPage = () => {
                     }
                   >
                     <img
-                      src={`${cloudFrontUrl}${product?.addImgPath2Vl}`}
+                      src={`${product?.addImgPath2Vl}`}
                       alt={product?.prdctNm}
                       className="w-[100px] h-[100px] object-contain"
                     />
@@ -359,7 +359,7 @@ const MDProductViewDetailPage = () => {
                 <td className="w-full h-full flex justify-center items-center px-6 text-sm md:text-base">
                   {product?.rcmdtnCustNm ? (
                     <a
-                      href={`${cloudFrontUrl}${product?.rcmdtnCustNm}`}
+                      href={`${product?.rcmdtnCustNm}`}
                       download
                       target="_blank"
                       rel="noopener noreferrer"
@@ -381,7 +381,7 @@ const MDProductViewDetailPage = () => {
                 <td className="w-full h-full flex justify-center items-center px-6 text-sm md:text-base">
                   {product?.explnAtchFilePathVl ? (
                     <a
-                      href={`${cloudFrontUrl}${product?.explnAtchFilePathVl}`}
+                      href={`${product?.explnAtchFilePathVl}`}
                       download
                       target="_blank"
                       rel="noopener noreferrer"
