@@ -886,7 +886,7 @@ const ProductRegisterAndEditPage = () => {
                     </SelectContent>
                   </Select>
                   <Select
-                    disabled={category.first === undefined}
+                    disabled={category.first?.id === undefined}
                     value={category.second?.id?.toString() ?? ""}
                     onValueChange={(value) => handleChangeCategory(1, value)}
                   >
@@ -908,7 +908,7 @@ const ProductRegisterAndEditPage = () => {
                     </SelectContent>
                   </Select>
                   <Select
-                    disabled={category.second === undefined}
+                    disabled={category.second?.id === undefined}
                     value={category.third?.id?.toString() ?? ""}
                     onValueChange={(value) => handleChangeCategory(2, value)}
                   >
@@ -930,7 +930,7 @@ const ProductRegisterAndEditPage = () => {
                     </SelectContent>
                   </Select>
                   <Select
-                    disabled={category.third === undefined}
+                    disabled={category.third?.id === undefined}
                     value={category.fourth?.id?.toString() ?? ""}
                     onValueChange={(value) => handleChangeCategory(3, value)}
                   >

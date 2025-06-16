@@ -781,7 +781,7 @@ const MDProductApplyEditPage = () => {
               </SelectContent>
             </Select>
             <Select
-              disabled={category.first === undefined}
+              disabled={category.first?.id === undefined}
               value={category.second?.toString()}
               onValueChange={(value) => handleChangeCategory(1, value)}
             >
@@ -801,7 +801,7 @@ const MDProductApplyEditPage = () => {
               </SelectContent>
             </Select>
             <Select
-              disabled={category.second === undefined}
+              disabled={category.second?.id === undefined}
               value={category.third?.toString()}
               onValueChange={(value) => handleChangeCategory(2, value)}
             >
@@ -821,7 +821,7 @@ const MDProductApplyEditPage = () => {
               </SelectContent>
             </Select>
             <Select
-              disabled={category.third === undefined}
+              disabled={category.third?.id === undefined}
               value={category.fourth?.toString()}
               onValueChange={(value) => handleChangeCategory(3, value)}
             >

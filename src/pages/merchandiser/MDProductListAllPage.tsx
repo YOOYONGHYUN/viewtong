@@ -215,6 +215,8 @@ const MDProductListAllPage = () => {
     resetState();
   };
 
+  console.log(productList);
+
   return (
     <div className="w-full min-h-screen py-12 px-10 lg:px-20">
       <div className="space-y-6 bg-white rounded-xl shadow-lg p-8">
@@ -288,7 +290,7 @@ const MDProductListAllPage = () => {
                 </SelectContent>
               </Select>
               <Select
-                disabled={category.first === undefined}
+                disabled={category.first?.id === undefined}
                 value={category.second?.id?.toString() ?? ""}
                 onValueChange={(value) => handleChangeCategory(1, value)}
               >
@@ -310,7 +312,7 @@ const MDProductListAllPage = () => {
                 </SelectContent>
               </Select>
               <Select
-                disabled={category.second === undefined}
+                disabled={category.second?.id === undefined}
                 value={category.third?.id?.toString() ?? ""}
                 onValueChange={(value) => handleChangeCategory(2, value)}
               >
@@ -332,7 +334,7 @@ const MDProductListAllPage = () => {
                 </SelectContent>
               </Select>
               <Select
-                disabled={category.third === undefined}
+                disabled={category.third?.id === undefined}
                 value={category.fourth?.id?.toString() ?? ""}
                 onValueChange={(value) => handleChangeCategory(3, value)}
               >
@@ -458,7 +460,7 @@ const MDProductListAllPage = () => {
                 >
                   <div>
                     <img
-                      src={`${cloudFrontUrl}${product.thumbImgPathVl}`}
+                      src={`${product.thumbImgPathVl}`}
                       alt={product.prdctNm}
                       className="w-full h-40 object-cover rounded-lg"
                     />
